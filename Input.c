@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include "Input.h"
 
-//algo para actualizar el eclipse >:(
+//algo para actualizar el eclipse :(
 
 #define ERRORCHECK (estado = ((input = getchar()) != '\n' && input != 0)? ERROR : estado)
 
