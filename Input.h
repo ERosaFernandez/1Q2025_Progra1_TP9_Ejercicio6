@@ -1,12 +1,7 @@
-/*
- * Input.h
- *
- *  Created on: May 25, 2025
- *      Author: enzorofer
- */
-
 #ifndef INPUT_H_
 #define INPUT_H_
+
+//algo para actualizar el eclipse >:(
 
 enum results {
 	SALIR = -5, ENCENDER, LIMPIAR, CONMUTAR

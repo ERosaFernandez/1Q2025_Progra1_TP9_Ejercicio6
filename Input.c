@@ -1,12 +1,8 @@
-/*
- * Input.c
- *
- *  Created on: May 25, 2025
- *      Author: enzorofer
- */
 #include <stdio.h>
 #include <stdint.h>
 #include "Input.h"
+
+//algo para actualizar el eclipse >:(
 
 #define ERRORCHECK (estado = ((input = getchar()) != '\n' && input != 0)? ERROR : estado)
 
