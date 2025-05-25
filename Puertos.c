@@ -140,10 +140,10 @@ void bitToggle (Port c, Bit n){
 		if (c == A || c == B){
 			if(n<BYTESIZE){																		//verifica que si c es el puerto A o B el bit n debe estar en un rango de 8 bits
 				if (bitGet (c,n) == 1){
-					bitSet (c,n);
+					bitClr (c,n);
 				}																				//se modifica el estado del bit dependiendo de su estado actual	para los puertos A y B
 				else{
-					bitClr (c,n);
+					bitSet (c,n);
 				}
 			}
 			else{
@@ -170,7 +170,7 @@ void maskOn(Port c, Mask m){
 	Flag error = 0;
 	if (c == A || c == B){																		//se verifica que c se el puerto A o B
 		if (m <= MAX8BITS){																		//al ser uno de esos puertos la mascara tiene que ser un numero menor a 256
-			for (b = 0; b <= (sizeof(Puerto)-1); b ++){
+			for (b = 0; b < BYTESIZE; b ++){
 				if (m & (1 << b)){																//se usa la mascara para modificar bit a bit el puerto indicado
 					bitSet(c,b);
 				}
