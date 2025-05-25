@@ -13,7 +13,6 @@ int main() {
 
 	while (cambios != SALIR) {
 		cambios = input();
-		printf ("%d\n", cambios);
 		switch (cambios) {
 		case ENCENDER:
 			maskOn(A, MAX8BITS);
