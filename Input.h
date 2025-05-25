@@ -8,8 +8,13 @@
 #ifndef INPUT_H_
 #define INPUT_H_
 
-typedef uint8_t flag;
+enum results {
+	SALIR = -5, ENCENDER, LIMPIAR, CONMUTAR
+};
 
-uint8_t input ();
+typedef int8_t flag;
+
+int8_t input ();
+void instrucciones();
 
 #endif /* INPUT_H_ */
