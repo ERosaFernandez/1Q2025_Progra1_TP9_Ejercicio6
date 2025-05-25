@@ -3,7 +3,7 @@
 #include "Puertos.h"
 #include "Input.h"
 
-//algo para actualizar el eclipse >:(
+//algo para actualizar el eclipse :(
 
 int main() {
 	int8_t cambios = 0;
