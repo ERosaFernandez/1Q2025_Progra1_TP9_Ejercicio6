@@ -10,7 +10,7 @@ void printall (Port c){
 	Bit b;
 	if (c == A){
 		for (b = (BYTESIZE-1); b >= 0; b --){
-			printf("%d", PA.Byte & (1 << b)? 1 : 0);
+			printf("%d", PA.Byte & (1 << b)? 1 : 0);											//
 		}
 	}
 	else if (c == B){
@@ -37,10 +37,10 @@ void bitSet (Port c, Bit b){
 	if (b>= 0 && b <= 15){
 		switch (c){
 			case A:
-				PA.Byte |= (1 << b);
+				(b < BYTESIZE)? PA.Byte |= (1 << b) : printf ("Bit Invalido\n");
 				break;
 			case B:
-				PB.Byte |= (1 << b);
+				(b < BYTESIZE)? PB.Byte |= (1 << b) : printf ("Bit Invalido\n");
 				break;
 			case D:
 				if (b < BYTESIZE) PD.PB->Byte |= (1 << b);
@@ -59,10 +59,10 @@ void bitClr (Port c, Bit b){
 	if (b>= 0 && b <= 15){
 		switch (c){
 			case A:
-				PA.Byte &= ~(1 << b);
+				(b < BYTESIZE)? PA.Byte &= ~(1 << b) : printf ("Bit Invalido\n");
 				break;
 			case B:
-				PB.Byte &= ~(1 << b);
+				(b < BYTESIZE)? PB.Byte &= ~(1 << b) : printf ("Bit Invalido\n");
 				break;
 			case D:
 				if (b < BYTESIZE) PD.PB->Byte &= ~(1 << b);
@@ -102,10 +102,18 @@ Bit bitGet (Port c, Bit n){
 	if (n >= 0 && n <= 15){
 		switch (c){
 			case A:
-				b = PA.Byte & (1 << n)? 1 : 0;
+				if (b < BYTESIZE) b = PA.Byte & (1 << n)? 1 : 0;
+				else {
+					printf ("Bit Invalido\n");
+					b=-1;
+				}
 				break;
 			case B:
-				b = PB.Byte & (1 << n)? 1 : 0;
+				if (b < BYTESIZE) b = PB.Byte & (1 << n)? 1 : 0;
+				else {
+					printf ("Bit Invalido\n");
+					b=-1;
+				}
 				break;
 			case D:
 				if (n <= 7){
