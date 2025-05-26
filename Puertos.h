@@ -8,6 +8,8 @@
 #define MAX8BITS 255
 #define BYTESIZE 8
 
+//Definiciones utiles
+
 
 typedef struct {
 	uint8_t b0		:1	;
@@ -30,11 +32,13 @@ typedef struct{
 	Puerto * PA;
 }Puerto_D;
 
+//Definicion de Puertos para luego ser emulados
+
 typedef uint8_t Port;
 typedef int8_t Bit;
 typedef uint8_t Flag;
 typedef int16_t Mask;
-
+//Asignaciones de aliases para mejor entendimiento
 
 void printall (Port);			//Imprime todos los bits de un puerto
 int16_t getValue(Port);			//Devuelve el valor entero de un puerto
